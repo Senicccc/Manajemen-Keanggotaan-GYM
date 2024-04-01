@@ -127,6 +127,8 @@ void menu()
         default:
         return;
         break;
+    case 7:
+        exit(0);
     }
 
 }
