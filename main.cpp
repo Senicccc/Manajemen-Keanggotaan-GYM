@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//deklarasi fungsi sebelum digunakan
+//deklarasi fungsi-fungsi sebelum digunakan
 void menu();
 void registrasi();
 void header();
@@ -52,6 +52,7 @@ dataKelas kelas[jmlKelas];
 //array sebanyak jumlah kelas yang dapat ditampung, ditulis jmlkelas agar kalau dirubah tidak ribet
 //kelas hanya boleh ada 10 kelas di gym, maka dibatasi jadi 10
 
+//fungsi paling utama dari kodingan ini, agar dapat masuk ke menu 
 int main()
 {
     do
@@ -61,6 +62,7 @@ int main()
         menu();
     } while (true);
 }
+// pakai do while untuk looping 
 
 //buat bersihin output sebelumnya, biar rapih
 void bersih()
@@ -95,9 +97,12 @@ void menu()
     cout << "[6] Tampilkan Seluruh Data Kelas\n";
     cout << "[7] Keluar Program\n";
 
+    //menu pilihan untuk memilih menu yang dituju
     cout << "Pilihan: ";
     cin >> pilihan;
 
+    //switch case untuk menjalankan fungsi pilihan menu
+    //setiap menu ada fungsi bersih(); supaya kalo looping kembali ke menu, output yang sebelumnya sudah bersih
     switch (pilihan)
     {
     case 1:
@@ -313,6 +318,7 @@ void editAnggota(string nama)
     {
         if (skrg->nama == nama)
         {
+            //input data baru lagi untuk menggantikan data lama
             cout << "Masukkan data baru untuk '" << nama << "'" << endl;
             cout << "Nama\t\t\t: ";
             cin.ignore();
